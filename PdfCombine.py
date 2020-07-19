@@ -2,7 +2,7 @@
 
 # Combining selected pages from different PDFs using PyPDF2 module
 
-# Arguments: ["outputfilename" , "source dir"]
+# Arguments: ["outputfilename" , "source dir"] ##
 
 import os
 import sys
