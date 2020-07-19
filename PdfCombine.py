@@ -7,20 +7,19 @@
 import os
 import sys
 from PyPDF2 import PdfFileMerger, PdfFileReader
-a = str(sys.argv)
 exportnamme = (sys.argv[1])+'.pdf'
-dirr = sys.argv[2]
+exportdir = sys.argv[2]
 
 pdffile =[]
 
-for filename in os.listdir(dirr):
+for filename in os.listdir(exportdir):
 	if filename.endswith('.pdf'):
 		pdffile.append(filename)
 
 merger = PdfFileMerger()
 for pdf in pdffile:
-    input = PdfFileReader(open(dirr+"\\"+pdf,'rb'))
+    input = PdfFileReader(open(exportdir+"\\"+pdf,'rb'))
     merger.append((input))
 
-    merger.write(dirr+"\\"+exportnamme)
+    merger.write(exportdir+"\\"+exportnamme)
 
